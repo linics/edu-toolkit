@@ -1,0 +1,4 @@
+interface:
+  display_name: "教师备课工具包"
+  short_description: "从教材生成教案、分层作业与教师答案的备课 Skill"
+  default_prompt: "Use $edu-toolkit to create a lesson plan and differentiated worksheets from my teaching materials."

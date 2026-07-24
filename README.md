@@ -1,0 +1,68 @@
+# edu-toolkit
+
+一套面向教师备课的 Agent Skill，包含两个可以连续使用的模块：
+
+- 教学设计生成，读取教材与课标后生成 Markdown 和 Word 教案。
+- 分层作业生成，围绕同一课题生成学生版 A、B 两页及单独的教师版。
+
+它最初在 WorkBuddy 中使用，但不依赖某个特定模型。只要 Agent 支持读取 Skill、操作本地文件并运行 Python 脚本，就可以按自身的 Skill 安装方式接入。
+
+## 下载
+
+- [下载最新版 ZIP](https://github.com/linics/edu-toolkit/archive/refs/heads/main.zip)
+- [查看 Skill 源文件](./edu-toolkit)
+
+下载 ZIP 后解压，真正需要安装的 Skill 目录是仓库中的 `edu-toolkit/`。
+
+## 在 WorkBuddy 中使用
+
+把下载得到的 ZIP 文件放到电脑上，然后告诉 WorkBuddy：
+
+> 我下载了 edu-toolkit 的 ZIP 文件。请在电脑上找到并解压，把仓库中的 edu-toolkit Skill 安装好。
+
+安装完成后，可以从一项具体任务开始：
+
+> 请使用 edu-toolkit，根据我提供的教材生成一份四年级数学教学设计。
+
+如果 Agent 无法可靠读取课本照片或扫描版 PDF，Skill 会要求暂停并切换到支持图像理解的模型，避免根据文件名或相似课题猜测内容。
+
+## 在其他 Agent 中使用
+
+不同 Agent 的 Skill 目录与安装入口并不相同。通用做法是：
+
+1. 下载或克隆本仓库。
+2. 把仓库中的 `edu-toolkit/` 复制到该 Agent 的 Skills 目录。
+3. 重新启动或刷新 Skill 列表。
+4. 在任务中明确调用 `edu-toolkit`。
+
+如果 Agent 不支持自动安装，也可以直接让它读取 `edu-toolkit/SKILL.md`，再按其中的模块规则执行。
+
+## 目录
+
+```text
+edu-toolkit/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── modules/
+│   ├── lesson-plan.md
+│   └── quiz.md
+├── scripts/
+│   ├── read_reference.py
+│   ├── to_docx_lesson.py
+│   └── to_docx_quiz.py
+└── references/
+    ├── 课标/
+    ├── 课本内容/
+    ├── 教案参考/
+    └── 练习参考/
+```
+
+公开仓库没有附带教材页面、内部培训资料、历史测试输出或教师个人材料。使用时请把自己有权使用的资料放入相应目录。
+
+## 使用边界
+
+- 上传学生材料前先去除姓名、成绩明细、联系方式和家庭信息。
+- 对教材、课程标准、题目答案与引用内容进行人工核验。
+- 先在测试文件夹运行，不要直接覆盖原始教案与作业。
+- Agent 负责整理、展开和重复执行，教学目标、课堂取舍与最终责任仍由教师承担。
