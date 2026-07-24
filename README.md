@@ -17,20 +17,17 @@
 
 这些摘要用于帮助 Agent 判断小学一至六年级的课程内容范围、核心素养指向与学业要求。教学设计和分层作业模块也按小学课堂时长、不同年级学生的认知特点与任务复杂度编写。
 
-中学教师可以借鉴这套 Skill 的文件结构和工作流程，但不能直接套用其中的课标与年级规则。若要适配其他学段，需要替换相应课程标准摘要，并重新校准课时、学情、题目难度和评价要求。
+中学教师可以借鉴这套 Skill 的文件结构和工作流程，再根据相应课标和教学要求调整。
 
-## 下载
+## 获取与安装
 
-- [下载最新版 ZIP](https://github.com/linics/edu-toolkit/archive/refs/heads/main.zip)
 - [查看 Skill 源文件](./edu-toolkit)
-
-下载 ZIP 后解压，真正需要安装的 Skill 目录是仓库中的 `edu-toolkit/`。
 
 ## 在 WorkBuddy 中使用
 
-把下载得到的 ZIP 文件放到电脑上，然后告诉 WorkBuddy：
+把仓库地址交给 WorkBuddy，让它自行获取并安装：
 
-> 我下载了 edu-toolkit 的 ZIP 文件。请在电脑上找到并解压，把仓库中的 edu-toolkit Skill 安装好。
+> 请通过 Git 获取 https://github.com/linics/edu-toolkit.git，并把仓库中的 edu-toolkit 目录安装为 Skill。完成后告诉我安装位置。
 
 安装完成后，可以从一项具体任务开始：
 
@@ -42,12 +39,14 @@
 
 不同 Agent 的 Skill 目录与安装入口并不相同。通用做法是：
 
-1. 下载或克隆本仓库。
+1. 让 Agent 获取或克隆本仓库。
 2. 把仓库中的 `edu-toolkit/` 复制到该 Agent 的 Skills 目录。
 3. 重新启动或刷新 Skill 列表。
 4. 在任务中明确调用 `edu-toolkit`。
 
 如果 Agent 不支持自动安装，也可以直接让它读取 `edu-toolkit/SKILL.md`，再按其中的模块规则执行。
+
+如果 Agent 无法打开仓库，可先在浏览器中测试同一地址。GitHub 在部分网络环境中可能连接不稳定；浏览器也无法访问时，请换到能够正常访问 GitHub 的网络环境后再试。
 
 ## 目录
 
