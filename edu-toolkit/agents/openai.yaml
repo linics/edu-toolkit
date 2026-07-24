@@ -1,4 +1,4 @@
 interface:
-  display_name: "教师备课工具包"
-  short_description: "从教材生成教案、分层作业与教师答案的备课 Skill"
-  default_prompt: "Use $edu-toolkit to create a lesson plan and differentiated worksheets from my teaching materials."
+  display_name: "小学教师备课工具包"
+  short_description: "为小学一至六年级生成教案、分层作业与教师答案"
+  default_prompt: "Use $edu-toolkit to create a primary-school lesson plan and differentiated worksheets from my teaching materials."
